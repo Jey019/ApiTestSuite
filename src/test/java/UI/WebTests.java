@@ -47,7 +47,17 @@ public class WebTests extends BaseTestSuite {
         Assertions.assertEquals("Your email is required", forms.getErrorEmail());
         Assertions.assertEquals("You must agree to continue", forms.getErrorAgree());
     }
+    @Test
 
+    public void DistanceToJupiterTest(){
+        var menu = new Menu(driver);
+        menu.navigateToPlanetsPage();
+
+        var planets = new PlanetsPage(driver);
+        var jupiter =  planets.findPlaneTileByName("Jupiter");
+        Assertions.assertEquals("778,500,000 km", jupiter.getDistance());
+
+    }
 
 
 }
