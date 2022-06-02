@@ -40,6 +40,7 @@ public class WebTests extends BaseTestSuite {
         var forms = new FormsPage(driver);
         forms.clickSubmitButton();
         forms.getErrorName();
+
         forms.getErrorEmail();
         forms.getErrorAgree();
 
@@ -48,7 +49,6 @@ public class WebTests extends BaseTestSuite {
         Assertions.assertEquals("You must agree to continue", forms.getErrorAgree());
     }
     @Test
-
     public void DistanceToJupiterTest(){
         var menu = new Menu(driver);
         menu.navigateToPlanetsPage();
