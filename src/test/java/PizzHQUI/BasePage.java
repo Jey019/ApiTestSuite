@@ -27,43 +27,9 @@ import java.util.concurrent.TimeUnit;
         }
 
         @BeforeEach
-        public void startup(){
+        public void startup() {
             driver.get("https://d3udduv23dv8b4.cloudfront.net/");
             driver.manage().window().maximize();
-
-            WebElement itemfound = null;
-            List<WebElement> login = driver.findElements(By.tagName("a"));
-            for (WebElement a: login)
-            {
-                if (a.getText().equalsIgnoreCase("person")){
-                    itemfound = a;
-                    break;
-                }
-            }
-            if (itemfound == null) { throw (new NotFoundException()); }
-            itemfound.click();
-
-            WebElement element = driver.findElement(By.name("gen-20220603-username"));
-            element.sendKeys("bob");
-
-            WebElement element1 = driver.findElement(By.name("gen-20220603-password"));
-            element1.sendKeys("ilovepizza");
-
-
-            WebElement btnfound = null;
-            List<WebElement> buttons = driver.findElements(By.tagName("button"));
-            for (WebElement btn : buttons)
-            {
-                if (btn.getText().equalsIgnoreCase("login"))
-                {
-                    btnfound = btn;
-                    break;
-                }
-
-
-            }
-            if (btnfound == null) { throw (new NotFoundException()); }
-            btnfound.click();
 
         }
         @AfterAll
