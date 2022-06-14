@@ -68,8 +68,7 @@ public class Pizza {
         itemfound1.click();
 
         var heading = driver.findElement(By.tagName("h2")).getText();
-
-        Assertions.assertEquals(heading, "person Welcome bob");
+        Assertions.assertEquals(heading.substring(7,18), "Welcome bob");
 
     }
 

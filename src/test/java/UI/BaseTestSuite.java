@@ -17,8 +17,7 @@ public class BaseTestSuite {
 
     @BeforeAll
     public static void Setup() throws MalformedURLException {
-        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\4358\\ChromeDriver102\\chromedriver.exe");
-        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), new ChromeOptions());
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\4358\\ChromeDriver102\\chromedriver.exe");
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
     }

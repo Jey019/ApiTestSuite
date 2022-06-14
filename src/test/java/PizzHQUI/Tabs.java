@@ -7,10 +7,10 @@ import org.openqa.selenium.By;
 
 import java.util.List;
 
-public class Menu {
+public class Tabs {
     private WebDriver driver;
 
-    public Menu(WebDriver driver) {
+    public Tabs(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -26,5 +26,19 @@ public class Menu {
         }
         if (itemfound == null) { throw (new NotFoundException()); }
         itemfound.click();
+    }
+
+    public void navigateToMenu(){
+        WebElement fndmenu = null;
+        List<WebElement> elements = driver.findElements(By.tagName("a"));
+        for (WebElement currentelement : elements)
+        {
+            if (currentelement.getText().equalsIgnoreCase("menu")){
+                fndmenu = currentelement;
+                break;
+            }
+        }
+        if (fndmenu == null){ throw (new NotFoundException());}
+        fndmenu.click();
     }
 }
